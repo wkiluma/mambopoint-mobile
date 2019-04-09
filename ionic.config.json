@@ -1,0 +1,7 @@
+{
+  "name": "mambo-point",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
