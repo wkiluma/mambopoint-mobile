@@ -1,2 +1,2 @@
-# mambo-point-mobile
-Mambo-Point Mobile Application
+# mambopoint Mobile Application
+mambopoint Mobile Application
