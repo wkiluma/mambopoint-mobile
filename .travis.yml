@@ -1,42 +1,32 @@
-{
-  os: 'linux',
-  dist: 'trusty',
-  sudo: 'required',
-  group: 'stable',
-  addons:
-    {
-      apt:
-        {
-          sources: ['ubuntu-toolchain-r-test'],
-          packages: ['openjdk-7-jdk', 'google-chrome-stable'],
-        },
-      chrome: 'stable',
-    },
-  script:
-    [
-      'ionic cordova build --prod --aot --release android',
-      'ionic cordova build --prod --aot --release ios',
-    ],
-  install: ['npm install -g cordova ionic', 'npm install'],
-  node_js: '10',
-  language: 'node_js',
-  before_script:
-    [
-      'wget http://dl.google.com/android/android-sdk_r24.4-linux.tgz',
-      'tar -xvf android-sdk_r24.4-linux.tgz',
-      'echo y | ./android-sdk-linux/tools/android update sdk --no-ui --all --filter platform-tools',
-      'echo y | ./android-sdk-linux/tools/android update sdk --no-ui --all --filter build-tools-23.0.2',
-      'echo y | ./android-sdk-linux/tools/android update sdk --no-ui --all --filter android-23',
-      'echo y | ./android-sdk-linux/tools/android update sdk --no-ui --all --filter extra-android-support',
-      'echo y | ./android-sdk-linux/tools/android update sdk --no-ui --all --filter extra-android-m2repository',
-      'echo y | ./android-sdk-linux/tools/android update sdk --no-ui --all --filter extra-google-m2repository',
-      'export ANDROID_HOME=$PWD/android-sdk-linux',
-      'export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/23.0.2',
-      'sudo chown root /opt/google/chrome/chrome-sandbox',
-      'sudo chmod 4755 /opt/google/chrome/chrome-sandbox',
-      'export CHROME_BIN=chromium-browser',
-      'export DISPLAY=:99.0',
-      'sh -e /etc/init.d/xvfb start',
-      'sleep 10',
-    ],
-}
+dist: trusty
+sudo: false
+
+language: node_js
+node_js:
+  - '10'
+
+branches:
+  only:
+    - master
+    - develop
+
+cache:
+  directories:
+    - ./node_modules
+
+before_install:
+  - npm install -g ionic cordova
+
+install:
+  - pushd $TRAVIS_BUILD_DIR
+  - npm install
+
+script:
+  - ionic cordova build browser -- prod
+
+notifications:
+  email:
+    recipients:
+      - rajeyw@gmail.com
+    on_failure: always
+    on_success: always
