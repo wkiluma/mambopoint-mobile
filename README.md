@@ -1,4 +1,8 @@
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/mambopoint/mambopoint-mobile.svg)](https://greenkeeper.io/)
+
 # mambopoint Mobile Application
+
 mambopoint Mobile Application
 This is an application meant to help people connect to the different services they would want in the course of advancing their lives. Such services include 
 1)	Career issues - jobs, consultancies and internships. 
