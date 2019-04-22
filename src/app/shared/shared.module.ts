@@ -7,6 +7,7 @@ import { services } from './services';
 
 @NgModule({
   declarations: [...components, ...directives, ...pipes],
+  exports: [...components, ...directives, ...pipes],
   providers: [...services],
   imports: [CommonModule]
 })

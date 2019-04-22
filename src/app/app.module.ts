@@ -12,6 +12,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    CoreModule,
     AppRoutingModule,
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyCFfWz6okR0IIsGdcuDRGcU_uUS8U6FISU',
@@ -27,8 +29,7 @@ import { AppComponent } from './app.component';
       projectId: 'mambo-point-api',
       storageBucket: 'mambo-point-api.appspot.com',
       messagingSenderId: '61328136878'
-    }),
-    AngularFirestoreModule
+    })
   ],
   providers: [
     StatusBar,
