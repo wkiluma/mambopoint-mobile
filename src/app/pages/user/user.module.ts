@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { pages } from './pages';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [...pages],
-  imports: [CommonModule, UserRoutingModule]
+  imports: [CommonModule, IonicModule, UserRoutingModule]
 })
 export class UserModule {}
