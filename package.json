@@ -26,10 +26,12 @@
     "@ionic-native/status-bar": "^5.5.0",
     "@ionic/angular": "^4.3.0",
     "cordova-android": "8.0.0",
+    "cordova-browser": "6.0.0",
     "core-js": "^3.0.1",
     "firebase": "^5.10.0",
     "ionic": "^4.12.0",
     "rxjs": "~6.4.0",
+    "website": "0.1.1",
     "zone.js": "~0.9.0"
   },
   "devDependencies": {
@@ -79,7 +81,8 @@
       "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   },
   "config": {
