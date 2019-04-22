@@ -1,6 +1,7 @@
 version: '2'
 exclude_paths:
   - 'resources'
+  - 'platforms',
   - 'www'
   - '**/*.log'
   - '**/*.ico'
