@@ -5,16 +5,29 @@ language: node_js
 node_js:
   - '10'
 
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+  code_climate:
+    repo_token: b5393f5ae154b9eb52fedf6164a17868fd27e7ec1713c0dd93d7876f3cf07255
+
 branches:
   only:
     - master
     - develop
+    - /^greenkeeper/.*$/
 
 cache:
   directories:
     - ./node_modules
 
 before_install:
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
   - npm install -g ionic cordova
 
 install:
@@ -22,7 +35,11 @@ install:
   - npm install
 
 script:
+  - npm run test-coverage
   - ionic cordova build browser --prod
+
+after_script:
+  - coverage
 
 notifications:
   email:
