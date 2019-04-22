@@ -5,6 +5,13 @@ language: node_js
 node_js:
   - '10'
 
+addons:
+  apt:
+    packages:
+      - openjdk-8-jdk
+
+jdk: openjdk8
+
 branches:
   only:
     - master
@@ -15,6 +22,8 @@ cache:
     - ./node_modules
 
 before_install:
+  - curl -s "https://get.sdkman.io" | bash
+  - sdk install gradle 5.4
   - npm install -g ionic cordova
 
 install:
