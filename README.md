@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/mambopoint/mambopoint-mobile.svg?branch=master)](https://travis-ci.org/mambopoint/mambopoint-mobile)
 [![Maintainability](https://api.codeclimate.com/v1/badges/529591e5bb42d4a613d1/maintainability)](https://codeclimate.com/github/mambopoint/mambopoint-mobile/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/529591e5bb42d4a613d1/test_coverage)](https://codeclimate.com/github/mambopoint/mambopoint-mobile/test_coverage)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
