@@ -9,10 +9,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  btnColor = 'danger';
-  label = 'Click Me';
-  fullWidth = true;
-
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

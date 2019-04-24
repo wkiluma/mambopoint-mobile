@@ -6,17 +6,17 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent implements OnInit {
-  @Input() color: string;
+  @Input() buttonColor: string;
   @Input() buttonLabel: string;
   @Input() fullWidth: boolean;
   @Input() blockWidth: boolean;
-  @Input() fill: string;
-  @Input() size: string;
+  @Input() buttonFill: string;
+  @Input() buttonSize: string;
   @Input() iconName: string;
   @Input() iconSlot: string;
-  @Input() shape: string;
+  @Input() buttonShape: string;
 
-  expand = ' ';
+  buttonExpand = ' ';
   constructor() { }
 
  /**
@@ -24,11 +24,11 @@ export class ButtonComponent implements OnInit {
  */
   ngOnInit() {
     if (this.fullWidth && this.blockWidth) {
-      this.expand = '';
+      this.buttonExpand = '';
     } else if (this.fullWidth) {
-      this.expand = 'full';
+      this.buttonExpand = 'full';
     } else if (this.blockWidth) {
-      this.expand = 'block';
+      this.buttonExpand = 'block';
     }
   }
 
