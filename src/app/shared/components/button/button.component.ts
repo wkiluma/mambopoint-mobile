@@ -7,16 +7,29 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input() color: string;
-  @Input() expand: string;
   @Input() buttonLabel: string;
+  @Input() fullWidth: boolean;
+  @Input() blockWidth: boolean;
   @Input() fill: string;
   @Input() size: string;
-  @Input() slot: string;
   @Input() iconName: string;
   @Input() iconSlot: string;
+  @Input() shape: string;
 
+  expand = ' ';
   constructor() { }
 
-  ngOnInit() {}
+ /**
+ *To ensure no confusion between related attributes
+ */
+  ngOnInit() {
+    if (this.fullWidth && this.blockWidth) {
+      this.expand = '';
+    } else if (this.fullWidth) {
+      this.expand = 'full';
+    } else if (this.blockWidth) {
+      this.expand = 'block';
+    }
+  }
 
 }

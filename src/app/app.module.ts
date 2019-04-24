@@ -15,8 +15,10 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { metaReducers, reducers } from './store/reducers';
 
+import { ButtonComponent } from './shared/components/button/button.component';
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ButtonComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

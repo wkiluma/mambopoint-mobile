@@ -1,4 +1,4 @@
-<ion-button color = "{{ color }}" slot="{{ slot }}" expand = "{{ expand }}" fill="{{ fill }}" size="{{ size }}">
-  <ion-icon name="{{ iconName }}" slot="{{ iconSlot }}"></ion-icon>
+<ion-button color = "{{ color }}" expand = "{{ expand }}" shape="{{ shape }}" size = "{{ size }}" fill="{{ fill }}">
+  <ion-icon *ngIf = "iconName" name="{{ iconName }}" slot="{{ iconSlot }}"></ion-icon>
   {{ buttonLabel }}
 </ion-button>
