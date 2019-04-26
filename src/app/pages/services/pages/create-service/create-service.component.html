@@ -1,3 +1,49 @@
-<p>
-  create-service works!
-</p>
+<app-toolbar [title]="toolbar_title"></app-toolbar>
+<ion-content padding>
+<ion-item>
+  <ion-label position="stacked">Name</ion-label>
+  <ion-input ></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">Title</ion-label>
+  <ion-input rows="8"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">Source</ion-label>
+  <ion-input ></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">Organization</ion-label>
+  <ion-input rows="8"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">Deadline</ion-label>
+  <ion-input type="date"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">Contacts</ion-label>
+  <ion-input rows="8"></ion-input>
+</ion-item>
+
+<ion-item>
+    <ion-label position="stacked">Category</ion-label>
+    <ion-input ></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="stacked">Desciption</ion-label>
+    <ion-input ></ion-input>
+  </ion-item>
+
+<ion-button expand="block" shape="round" color="primary" (click)="addIdea()">
+  <ion-icon name="add" slot="start"></ion-icon>
+  Create Service
+</ion-button>
+</ion-content>
+
+ 

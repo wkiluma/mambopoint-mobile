@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
-import { FirestoreSettingsToken } from '@angular/fire/firestore';
+import {AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -31,6 +31,7 @@ import { metaReducers, reducers } from './store/reducers';
       storageBucket: 'mambo-point-api.appspot.com',
       messagingSenderId: '61328136878'
     }),
+    AngularFirestoreModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],

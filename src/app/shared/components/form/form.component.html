@@ -1,0 +1,15 @@
+<!--<form [formGroup]="FormData.formGroup" (ngSubmit)="PostData()">
+
+  <ion-item *ngFor="let input of FormData.inputs">
+    <ion-label position="stacked">{{input.label}}</ion-label>
+    <ion-input *ngIf="input.type == 'text' || input.type == 'number' " type="{{input.type}}" formControlName="{{input.formControlName}}" value=""></ion-input>
+    <ion-datetime *ngIf="input.type == 'date' "  formControlName="{{input.formControlName}}" value=""></ion-datetime>
+    <ion-textarea rows="4" *ngIf="input.type == 'textarea' " type="text" formControlName="{{input.formControlName}}" value=""></ion-textarea>
+  </ion-item>
+
+  <ion-button expand="block" shape="round" color="primary" type="submit" [disabled]="!FormData.formGroup.valid">
+    <ion-icon name="{{FormData.button.icon_name}}" slot="start"></ion-icon>
+    {{FormData.button.label}}
+  </ion-button>
+
+</form>  -->
