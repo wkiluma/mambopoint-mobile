@@ -15,7 +15,6 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { metaReducers, reducers } from './store/reducers';
 
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],

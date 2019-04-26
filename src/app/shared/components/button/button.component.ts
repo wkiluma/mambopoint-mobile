@@ -10,7 +10,7 @@ export class ButtonComponent implements OnInit {
   @Input() buttonLabel: string;
   @Input() fullWidth: boolean;
   @Input() blockWidth: boolean;
-  @Input() buttonFill: string;
+  @Input() buttonFill = 'solid';
   @Input() buttonSize: string;
   @Input() iconName: string;
   @Input() iconSlot: string;
