@@ -1,8 +1,12 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-thumbnail slot="start">
-      <ion-img [src]="logo" (click)="onClickLogo()"></ion-img>
+  <ion-toolbar [color]="toolbarColor">
+    <ion-thumbnail *ngIf="isRootPage" slot="start">
+      <ion-img [src]="toolbarLogo"></ion-img>
     </ion-thumbnail>
+
+    <ion-buttons *ngIf="!isRootPage" slot="start">
+      <ion-back-button [defaultHref]="rootPageHref"></ion-back-button>
+    </ion-buttons>
 
     <ion-title>
       {{ pageTitle }}

@@ -7,7 +7,7 @@ import { ServiceService } from '../../services/service.service';
   styleUrls: ['./create-service.component.scss']
 })
 export class CreateServiceComponent implements OnInit {
-  public toolbar_title = 'Create Service';
+  public toolbarTitle = 'Create Service';
   public title: string;
   description: string;
   source: string;

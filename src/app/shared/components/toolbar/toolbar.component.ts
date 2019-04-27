@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,13 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
   @Input() pageTitle: string;
-  logo = '../../../../assets/icon/favicon.png';
-  @Input() userButtonColor = 'primary';
-  constructor() {}
+  @Input() toolbarColor: string;
+  @Input() userButtonColor: string;
+  @Input() isRootPage: boolean;
+  @Input() rootPageHref: string;
+
+  toolbarLogo: string;
+
+  constructor() {
+    this.toolbarColor = '';
+    this.userButtonColor = '';
+    this.toolbarLogo = 'assets/icon/icon.jpeg';
+    this.rootPageHref = '';
+  }
 
   ngOnInit() {}
-
-  onClickLogo() {
-    console.log('clicked the logo');
-  }
 }

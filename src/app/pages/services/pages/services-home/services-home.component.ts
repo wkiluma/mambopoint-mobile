@@ -11,7 +11,7 @@ import { Service } from '../../models/service.model';
 })
 export class ServicesHomeComponent implements OnInit {
   public services$: Observable<Service[]>;
-  public toolbar_title = 'List of Services';
+  public toolbarTitle = 'List of Services';
 
   constructor(public serviceService: ServiceService) {}
 
