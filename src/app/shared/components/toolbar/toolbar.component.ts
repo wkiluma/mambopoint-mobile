@@ -1,17 +1,19 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss'],
+  styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
-  @Input() title: string = 'title';
-
-  constructor() {
-    this.title = 'Mambopoint App'
-   }
+  @Input() pageTitle: string;
+  logo = '../../../../assets/icon/favicon.png';
+  @Input() userButtonColor = 'primary';
+  constructor() {}
 
   ngOnInit() {}
 
+  onClickLogo() {
+    console.log('clicked the logo');
+  }
 }

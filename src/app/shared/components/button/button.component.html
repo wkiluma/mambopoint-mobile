@@ -1,3 +1,4 @@
-<p>
-  button works!
-</p>
+<ion-button color = "{{ buttonColor }}" expand = "{{ buttonExpand }}" shape="{{ buttonShape }}" size = "{{ buttonSize }}" fill="{{ buttonFill }}" [disabled] = "disabled" type = "{{ buttonType }}">
+  <ion-icon *ngIf = "iconName" name="{{ iconName }}" slot="{{ iconSlot }}" size ="{{ iconSize }}"></ion-icon>
+  {{ buttonLabel }}
+</ion-button>
