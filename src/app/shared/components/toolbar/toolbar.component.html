@@ -1,3 +1,15 @@
-<p>
-  toolbar works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-thumbnail slot="start">
+          <ion-img [src]="logo" (click)="onClickLogo()"></ion-img>
+    </ion-thumbnail>
+      
+    <ion-title>
+      {{ pageTitle }}
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <app-button [iconName] = "'contact'" [buttonColor] ="color" [buttonFill] = "'clear'" [iconSize] = "'large'"></app-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
