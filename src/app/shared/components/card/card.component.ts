@@ -7,7 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   @Input() card: any;
-  constructor() {}
+  @Input() avatarImage:string ;
+  @Input() image:string ;
+  constructor() {
+    this.avatarImage = 'assets/icon/icon.jpeg';
+    this.image = 'assets/shapes.svg' ;
+  }
 
   ngOnInit() {}
 }
