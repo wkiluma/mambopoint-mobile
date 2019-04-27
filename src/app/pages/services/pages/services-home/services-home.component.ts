@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from 'src/app/shared/services/home.service';
-import { ServiceService } from '../../services/service.service';
 import { Observable } from 'rxjs';
+
 import { Service } from '../../models/service.model';
+import { ServiceService } from '../../services/service.service';
 
 @Component({
   selector: 'app-services-home',
