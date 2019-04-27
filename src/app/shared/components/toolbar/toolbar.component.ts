@@ -8,13 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ToolbarComponent implements OnInit {
   @Input() pageTitle: string;
   logo = '../../../../assets/icon/favicon.png';
-  @Input() color = 'primary';
+  @Input() userButtonColor = 'primary';
   constructor() { }
 
   ngOnInit() {}
 
   onClickLogo(){
-    console.log('Go to home');
+    console.log('clicked the logo');
   }
 
 }

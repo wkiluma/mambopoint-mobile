@@ -14,6 +14,7 @@ export class ButtonComponent implements OnInit {
   @Input() buttonSize: string;
   @Input() iconName: string;
   @Input() iconSlot: string;
+  @Input() iconSize: string;
   @Input() buttonShape: string;
   @Input() buttonType: string;
   @Input() disabled = false;
