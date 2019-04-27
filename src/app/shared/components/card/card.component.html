@@ -1,11 +1,11 @@
-<ion-card>
-  <img src="../../.../../../../assets/shapes.svg" alt="">
-  <ion-card-subtitle>{{card.title}}</ion-card-subtitle>
-<ion-card-content>
-    <p text-justfy>{{card.description}</p>
+<ion-card *ngIf="card">
+  <img src="../../.../../../../assets/shapes.svg" alt="" />
+  <ion-card-subtitle>{{ card.title }}</ion-card-subtitle>
+  <ion-card-content>
+    <p text-justfy>{{ card.description }}</p>
     <span>
-      <p slot="start">From: {{card.organization}}</p>
-      <p slot="end">Deadline: {{card.organization}}</p>
+      <p slot="start">From: {{ card.organization }}</p>
+      <p slot="end">Deadline: {{ card.organization }}</p>
     </span>
-</ion-card-content>
+  </ion-card-content>
 </ion-card>
