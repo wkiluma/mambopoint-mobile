@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { ServiceService } from '../../services/service.service';
+import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-create-service',
   templateUrl: './create-service.component.html',
@@ -8,13 +9,21 @@ import { ServiceService } from '../../services/service.service';
 })
 export class CreateServiceComponent implements OnInit {
   public toolbarTitle = 'Create Service';
-  public title: string;
-  description: string;
-  source: string;
-  organization: string;
-  deadline: string;
-  contacts: string;
-  category: string;
+
+  public FormData = {
+    button : {
+      label: 'Create Service',iconName:'add'
+    },
+    inputs : [
+      {label:'Title',type:'text',formControlName:'title'},
+      {label:'Description',type:'textarea',formControlName:'description'},
+      {label:'Source',type:'text',formControlName:'source'},
+      {label:'Organization',type:'text',formControlName:'organization'},
+      {label:'Deadline',type:'date',formControlName:'deadline'},
+      {label:'Contacts',type:'number',formControlName:'contacts'},
+      {label:'Category',type:'text',formControlName:'category'}
+    ]
+  }
   constructor(private serviceService: ServiceService) {}
 
   ngOnInit() {}

@@ -1,4 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -6,21 +7,26 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-@Input() FormData:any = {
-  formGroup:'login',
-  button : {
-    label: 'Create Service',icon_name:'add'
-  },
-  inputs : [
-  {type:'text',formControlName:'source'},
-  {type:'number',formControlName:'tender_number'},
-  {type:'date',formControlName:'deadline'},
-  {type:'textarea',formControlName:'description'},
-  ]
- } ;
-  constructor() { }
+  public formGroup: FormGroup;
+  @Input() FormData: any = {
+    button: {
+      label: 'Create Service', iconName: 'add'
+    },
+    inputs: []
+  };
+  constructor(private formBuilder: FormBuilder) {
+  }
 
   ngOnInit() {
+    this.formGroup = this.formBuilder.group({});  
+   this.FormData.inputs.forEach(input => {
+     this.formGroup.addControl(input.formControlName,new FormControl('',Validators.required));
+   });
+   
+  }
+  PostData(){
+    console.log(this.formGroup.controls.keys);
+    
   }
 
 }
