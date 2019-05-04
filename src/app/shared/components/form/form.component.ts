@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,EventEmitter, Output } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,7 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 })
 export class FormComponent implements OnInit {
   public formGroup: FormGroup;
+  @Output() dataValues  = new EventEmitter() ;
   @Input() FormData: any = {
     button: {
       label: 'Create Service', iconName: 'add'
@@ -22,11 +23,19 @@ export class FormComponent implements OnInit {
    this.FormData.inputs.forEach(input => {
      this.formGroup.addControl(input.formControlName,new FormControl('',Validators.required));
    });
-   
-  }
-  PostData(){
-    console.log(this.formGroup.controls.keys);
-    
   }
 
+  PostData(){
+    let body = {} ;
+    this.FormData.inputs.forEach(input => {
+      Object.keys(this.formGroup.controls).forEach((name) => {
+        if(name == input.formControlName ){
+         let value = this.formGroup.controls[input.formControlName].value ;
+         body[name] = value ;
+        }
+      })
+    });
+    this.dataValues.emit(body);
+  }
+  
 }

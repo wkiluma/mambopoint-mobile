@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
 import { ServiceService } from '../../services/service.service';
-import { FormGroup } from '@angular/forms';
+import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-create-service',
   templateUrl: './create-service.component.html',
@@ -9,7 +8,6 @@ import { FormGroup } from '@angular/forms';
 })
 export class CreateServiceComponent implements OnInit {
   public toolbarTitle = 'Create Service';
-
   public FormData = {
     button : {
       label: 'Create Service',iconName:'add'
@@ -24,26 +22,24 @@ export class CreateServiceComponent implements OnInit {
       {label:'Category',type:'text',formControlName:'category'}
     ]
   }
-  constructor(private serviceService: ServiceService) {}
+  constructor(private serviceService: ServiceService,private toastCtrl:ToastController) {}
 
   ngOnInit() {}
 
-  onCreateService() {
+  onCreateService(body:any) {
+    this.showToast('App is creating service');
     this.serviceService
-      .create({
-        title: 'Erasto',
-        description: 'Erasto',
-        type: 'Internship',
-        categories: ['ICT', 'BUSSINESS'],
-        source: 'New paper',
-        organization: 'MAMBOPOINT',
-        deadline: '20-10-2019'
-      })
+      .create(body)
       .then(res => {
         console.log(res);
       });
-    this.serviceService.findAll().subscribe(res => {
-      console.log(res);
-    });
+  }
+
+  showToast(msg) {
+    this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      position: 'bottom'
+    }).then();
   }
 }

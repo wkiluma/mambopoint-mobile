@@ -6,10 +6,10 @@
       <span>
           <p>{{ card.title }}</p>
       </span> 
-      <p slot="end">{{ card.deadline }}</p>
+      <p slot="end">{{ card.deadline | date:'shortDate' }}</p>
   </ion-item>
   <ion-card-content>
-    <p>{{card.organization}}</p>
+    <p style="color:blue">{{card.organization}}</p>
       <p text-justfy>{{ card.description }}</p>
     <img [src]="image" />
     <ion-row>
