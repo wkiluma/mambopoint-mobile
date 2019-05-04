@@ -22,9 +22,6 @@ export class ButtonComponent implements OnInit {
   buttonExpand = ' ';
   constructor() { }
 
- /**
- *To ensure no confusion between related attributes
- */
   ngOnInit() {
     if (this.fullWidth && this.blockWidth) {
       this.buttonExpand = '';

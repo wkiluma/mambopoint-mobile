@@ -10,7 +10,9 @@ export class CommentComponent implements OnInit {
   @Input() profilePic: string;
   @Input() lastUpdate: string;
   @Input() text: string;
-  constructor() { }
+  constructor() {
+    this.profilePic = 'assets/icon/icon.jpeg';
+  }
 
   ngOnInit() {
   }
