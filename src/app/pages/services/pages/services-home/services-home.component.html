@@ -9,6 +9,5 @@
 
   <div *ngFor="let service of services$ | async">
     <app-card [card]="service"></app-card>
-    <app-comment [user] = "'Eric'" [lastUpdate] = "'1hr ago'" [text]="'Here is the test comment'"></app-comment>
   </div>
 </ion-content>
