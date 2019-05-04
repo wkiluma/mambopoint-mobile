@@ -1,0 +1,21 @@
+<ion-card *ngIf="card">
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img [src]="avatarImage" alt="" />
+    </ion-avatar>
+      <span>
+          <p>{{ card.title }}</p>
+      </span> 
+      <p slot="end">{{ card.deadline | date:'shortDate' }}</p>
+  </ion-item>
+  <ion-card-content>
+    <p style="color:blue">{{card.organization}}</p>
+      <p text-justfy>{{ card.description }}</p>
+    <img [src]="image" />
+    <ion-row>
+      <ion-col col-4> <app-button iconName="thumbs-up" buttonFill="clear"></app-button> </ion-col>
+      <ion-col col-4><app-button iconName="text" buttonFill="clear"></app-button></ion-col>
+      <ion-col col-4><app-button iconName="share" buttonFill="clear"></app-button></ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>

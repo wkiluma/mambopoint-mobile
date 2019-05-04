@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -6,9 +6,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./button.component.scss'],
 })
 export class ButtonComponent implements OnInit {
+  @Input() buttonColor: string;
+  @Input() buttonLabel: string;
+  @Input() fullWidth: boolean;
+  @Input() blockWidth: boolean;
+  @Input() buttonFill = 'solid';
+  @Input() buttonSize: string;
+  @Input() iconName: string;
+  @Input() iconSlot: string;
+  @Input() iconSize: string;
+  @Input() buttonShape: string;
+  @Input() buttonType: string;
+  @Input() disabled = false;
 
+  buttonExpand = ' ';
   constructor() { }
 
-  ngOnInit() {}
+ /**
+ *To ensure no confusion between related attributes
+ */
+  ngOnInit() {
+    if (this.fullWidth && this.blockWidth) {
+      this.buttonExpand = '';
+    } else if (this.fullWidth) {
+      this.buttonExpand = 'full';
+    } else if (this.blockWidth) {
+      this.buttonExpand = 'block';
+    }
+  }
 
 }

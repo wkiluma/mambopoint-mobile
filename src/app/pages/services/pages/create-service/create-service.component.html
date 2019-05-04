@@ -1,3 +1,5 @@
-<p>
-  create-service works!
-</p>
+<app-toolbar [pageTitle]="toolbarTitle"></app-toolbar>
+
+<ion-content padding>
+  <app-form [FormData]="FormData" (dataValues)="onCreateService($event)"></app-form>
+</ion-content>
