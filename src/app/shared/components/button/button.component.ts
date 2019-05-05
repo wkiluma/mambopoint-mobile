@@ -18,8 +18,5 @@ export class ButtonComponent implements OnInit {
   @Input() expand = '';
   constructor() {}
 
-  /**
-   *To ensure no confusion between related attributes
-   */
   ngOnInit() {}
 }
