@@ -1,21 +1,70 @@
-<ion-card *ngIf="card">
-  <ion-item lines="none">
-    <ion-avatar slot="start">
-      <img [src]="avatarImage" alt="" />
-    </ion-avatar>
-      <span>
-          <p>{{ card.title }}</p>
-      </span> 
-      <p slot="end">{{ card.deadline | date:'shortDate' }}</p>
-  </ion-item>
-  <ion-card-content>
-    <p style="color:blue">{{card.organization}}</p>
-      <p text-justfy>{{ card.description }}</p>
+<div *ngIf="card" class="card">
+  <!-- card header -->
+  <div class="card-header">
+    <!-- card title block -->
+    <div class="card-title-container">
+      <div class="card-avatar">
+        <ion-avatar slot="start">
+          <img [src]="avatarImage" alt="" />
+        </ion-avatar>
+      </div>
+      <div class="card-title-block">
+        <div class="card-title">
+          <span *ngIf="card.type" class="card-badge"
+            >{{ card.type }}&nbsp;</span
+          >
+          <span>{{ card.title }}</span>
+        </div>
+        <div class="card-subtitle">{{ card.organization }}</div>
+      </div>
+    </div>
+    <!-- end of header title block -->
+
+    <!-- card options -->
+    <div class="card-title-option"></div>
+    <!-- end of card options -->
+  </div>
+  <!-- end of card header -->
+
+  <!-- card description -->
+  <div class="card-description">
+    {{ card.description }}
+  </div>
+  <!-- end of card description -->
+
+  <!-- card image -->
+  <div class="card-image">
     <img [src]="image" />
-    <ion-row>
-      <ion-col col-4> <app-button iconName="thumbs-up" buttonFill="clear"></app-button> </ion-col>
-      <ion-col col-4><app-button iconName="text" buttonFill="clear"></app-button></ion-col>
-      <ion-col col-4><app-button iconName="share" buttonFill="clear"></app-button></ion-col>
-    </ion-row>
-  </ion-card-content>
-</ion-card>
+  </div>
+  <!-- end of card image -->
+
+  <!-- comment and like summary -->
+  <div class="card-summary">
+    <div class="card-likes">2 likes</div>
+    &nbsp;
+    <div class="card-comments">
+      2 comments
+    </div>
+  </div>
+  <!-- end of comment and like summary -->
+
+  <!-- card footer -->
+  <div class="card-footer">
+    <app-button
+      [icon]="{ name: 'thumbs-up', size: 'small' }"
+      fill="clear"
+      label="Admire"
+    ></app-button>
+    <app-button
+      [icon]="{ name: 'text', size: 'small' }"
+      fill="clear"
+      label="Comment"
+    ></app-button>
+    <app-button
+      [icon]="{ name: 'share', size: 'small' }"
+      fill="clear"
+      label="Share"
+    ></app-button>
+  </div>
+  <!-- end of card footer -->
+</div>
