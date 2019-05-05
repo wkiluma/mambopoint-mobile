@@ -2,10 +2,18 @@
 
 <ion-content>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/create-service">
+    <ion-fab-button routerLink="create-service">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <!-- service types -->
+  <div class="service-types">
+    <app-button label="All" shape="round"></app-button>
+    <app-button label="Tenders" shape="round" fill="outline"></app-button>
+    <app-button label="Jobs" shape="round" fill="outline"></app-button>
+    <app-button label="Internship" shape="round" fill="outline"></app-button>
+  </div>
+  <!-- end of service types -->
 
   <div *ngFor="let service of services$ | async">
     <app-card [card]="service"></app-card>
