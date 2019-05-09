@@ -3,7 +3,7 @@ export interface Service {
   title: string;
   description: string;
   deadline: string;
-  source: string;
+  source: string[];
   organization: string;
   categories: string[];
   type: string;
