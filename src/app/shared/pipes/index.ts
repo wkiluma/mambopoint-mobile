@@ -1,1 +1,3 @@
-export const pipes: any[] = [];
+import { AbbreviatePipe } from './abbreviate.pipe';
+
+export const pipes: any[] = [AbbreviatePipe];

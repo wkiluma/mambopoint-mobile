@@ -1,4 +1,5 @@
 <ion-button
+  *ngIf="shape !== 'circle'"
   color="{{ color }}"
   expand="{{ expand }}"
   shape="{{ shape }}"
@@ -15,4 +16,18 @@
   ></ion-icon>
   <span *ngIf="icon && label">&nbsp;</span>
   <span *ngIf="label">{{ label }}</span>
+</ion-button>
+
+<ion-button
+  color="{{ color }}"
+  expand="{{ expand }}"
+  shape="{{ shape }}"
+  size="{{ size }}"
+  fill="{{ fill }}"
+  disabled="{{ disabled }}"
+  type="{{ type }}"
+  class="circle-button"
+  *ngIf="shape === 'circle'"
+>
+  {{ label | abbreviate }}
 </ion-button>

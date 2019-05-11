@@ -8,10 +8,15 @@
   </ion-fab>
   <!-- service types -->
   <div class="service-types">
-    <app-button label="All" shape="round"></app-button>
-    <app-button label="Tenders" shape="round" fill="outline"></app-button>
-    <app-button label="Jobs" shape="round" fill="outline"></app-button>
-    <app-button label="Internship" shape="round" fill="outline"></app-button>
+    <div class="service-button" *ngFor="let serviceType of serviceTypes">
+      <app-button
+        label="{{ serviceType.name }}"
+        shape="circle"
+        fill="outline"
+        color="dark"
+      ></app-button>
+      <div class="service-types-label">{{ serviceType.name }}</div>
+    </div>
   </div>
   <!-- end of service types -->
 

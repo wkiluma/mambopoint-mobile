@@ -3,4 +3,17 @@
   display: flex;
   width: 100%;
   overflow: auto;
+  border-bottom: solid thin#eeeeee;
+  margin-bottom: 10px;
+}
+
+.service-button {
+  display: block;
+  text-align: center;
+  margin: 7px;
+}
+
+.service-types-label {
+  font-size: 12px;
+  font-weight: 300;
 }
