@@ -1,11 +1,12 @@
 import { AngularFirestoreCollection } from '@angular/fire/firestore';
 import { map, take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 export class BaseService<T> {
   constructor(
     private readonly serviceCollection: AngularFirestoreCollection<T>
   ) {}
-  findAll() {
+  findAll(): Observable<T[]> {
     return this.serviceCollection.snapshotChanges().pipe(
       map(actions =>
         actions.map(a => {

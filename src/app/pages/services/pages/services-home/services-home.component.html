@@ -8,7 +8,10 @@
   </ion-fab>
   <!-- service types -->
   <div class="service-types">
-    <div class="service-button" *ngFor="let serviceType of serviceTypes">
+    <div
+      class="service-button"
+      *ngFor="let serviceType of serviceTypes$ | async"
+    >
       <app-button
         label="{{ serviceType.name }}"
         shape="circle"
