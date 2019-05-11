@@ -10,9 +10,10 @@
       </div>
       <div class="card-title-block">
         <div class="card-title">
-          <span *ngIf="card.type" class="card-badge"
-            >{{ card.type }}&nbsp;</span
-          >
+          <ion-badge *ngIf="card.type" color="primary">{{
+            card.type
+          }}</ion-badge>
+          <span *ngIf="card.type">&nbsp;</span>
           <span>{{ card.title }}</span>
         </div>
         <div class="card-subtitle">{{ card.organization }}</div>
