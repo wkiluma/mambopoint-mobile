@@ -38,7 +38,8 @@ export class CommentListComponent implements OnInit {
   }
 
   postComment() {
-    console.log('Post comment');
+    console.log(this.formGroup.value);
+    this.formGroup.reset();
   }
 
 }
