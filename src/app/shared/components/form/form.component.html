@@ -4,7 +4,7 @@
     <ion-label position="stacked">{{input.label}}</ion-label>
     <ion-input *ngIf="input.type == 'text' || input.type == 'number' " type="{{input.type}}" formControlName="{{input.formControlName}}" value=""></ion-input>
     <ion-datetime *ngIf="input.type == 'date' "  formControlName="{{input.formControlName}}" value=""></ion-datetime>
-    <ion-textarea rows="3" *ngIf="input.type == 'textarea' " type="text" formControlName="{{input.formControlName}}" value=""></ion-textarea>
+<ion-textarea rows="3" *ngIf="input.type == 'textarea' " type="text" formControlName="{{input.formControlName}}" placeholder = "{{ input.placeholder }}" value=""></ion-textarea>
     <ion-select  multiple="true" *ngIf="input.type == 'select' && input.multiple == 'true' " formControlName="{{input.formControlName}}">
       <ion-select-option *ngFor="let option of input.options" value="{{option}}">{{option}}</ion-select-option>
     </ion-select>
@@ -13,7 +13,7 @@
     </ion-select>
   </ion-item>
 
-  <ion-button expand="block" shape="round" color="primary" type="submit" [disabled]="!formGroup.valid">
+  <ion-button *ngIf="FormData.button" expand="block" shape="round" color="primary" type="submit" [disabled]="!formGroup.valid">
     <ion-icon name="{{FormData.button.iconName}}" slot="start"></ion-icon>
     {{FormData.button.label}}
   </ion-button>
