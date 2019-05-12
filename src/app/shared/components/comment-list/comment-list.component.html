@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Comments</ion-title>
+    <ion-button slot="end" color="dark" fill="icon-only" (click) = "onDismiss()">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-comment *ngFor = "let comment of comments" [user]="comment.user" [lastUpdate]="comment.lastUpdate" [text]="comment.text"></app-comment>
+</ion-content>
+
+<ion-footer>
+  <ion-textarea></ion-textarea>
+</ion-footer>
