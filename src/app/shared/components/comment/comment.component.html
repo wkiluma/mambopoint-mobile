@@ -1,54 +1,29 @@
-
-<!-- <ion-grid>
-  <ion-row justify-content-end>
-    <ion-col  size="10">
-        <ion-card>
-            <ion-item lines="none">
-              <ion-avatar slot="start">
-                <img [src]="profilePic" alt="" />
-              </ion-avatar>
-                <span>
-                    <h4>{{ user }}</h4>
-                    <p>{{ lastUpdate }}</p>
-                </span>
-            </ion-item>
-            <ion-card-content>
-                <p text-justfy>{{ text }}</p>
-            </ion-card-content>
-            <ion-row>
-                <ion-col size="6">
-                    <app-button [label] = "'Admire'" [fill] = "'icon-only'" [icon]="{name : 'thumbs-up'}"></app-button>
-                </ion-col>
-                <ion-col size="6">
-                    <app-button [label] = "'Reply'" [fill] = "'icon-only'" [icon]="{name: 'text'}"></app-button>
-                  </ion-col>
-              </ion-row>
-          </ion-card>
-    </ion-col>
-  </ion-row>
-</ion-grid> -->
-
 <div class="comment">
-  <div style="border: 1px solid rgb(230, 221, 221); border-radius: 5px;">
-      <ion-item lines="none">
-        <ion-avatar slot="start">
-          <img [src]="profilePic" alt="" />
-        </ion-avatar>
-          <span>
-              <h4>{{ user }}</h4>
-              <p class="last-update">{{ lastUpdate }}</p>
-          </span>
-      </ion-item>
-      <p text-justfy padding >{{ text }}</p>
-          <ion-grid>
-              <ion-row>
-                  <ion-col size="6">
-                      <app-button [label] = "'Admire'" [fill] = "'icon-only'" [icon]="{name : 'thumbs-up'}"></app-button>
-                  </ion-col>
-                  <ion-col size="6">
-                      <app-button [label] = "'Reply'" [fill] = "'icon-only'" [icon]="{name: 'text'}"></app-button>
-                  </ion-col>
-            </ion-row>
-          </ion-grid>
-    </div> 
+  <div class="comment-header">
+    <ion-avatar slot="start">
+      <img [src]="profilePic" alt="" />
+    </ion-avatar>
+    <span>
+        <h4>{{ user }}</h4>
+        <p class="last-update">{{ lastUpdate }}</p>
+    </span>
+  </div>
+    <p class="comment-text">{{ text }}</p>
+    <div class="comment-summary">
+      <div class="comment-likes">1 like</div>
+      &nbsp;
+      <div class="comment-replies">
+        4 comments
+      </div>
+    </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+              <app-button [label] = "'Admire'" [fill] = "'clear'" [icon]="{name : 'thumbs-up'}"></app-button>
+          </ion-col>
+          <ion-col size="6">
+              <app-button [label] = "'Reply'" [fill] = "'clear'" [color]="primary" [icon]="{name: 'text'}"></app-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 </div>

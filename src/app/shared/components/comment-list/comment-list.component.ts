@@ -15,10 +15,10 @@ export class CommentListComponent implements OnInit {
 
   constructor(private modalCtrl: ModalController, private formBuilder: FormBuilder) {
     this.comments = [
-      {user: 'Eric', profilePic: '',  lastUpdate: '3hr', text: 'Is this job real!!??'},
-      {user: 'Erasto', profilePic: '', lastUpdate: '2hr', text: 'Yes it is, mambo point is very reliable'},
-      {user: 'Rajab', profilePic: '', lastUpdate: '3min', text: 'Mambo point is realy cool'},
-      {user: 'Eric', profilePic: '', lastUpdate: '1min', text: 'Its realy cool'},
+      {user: 'Eric Chingalo', profilePic: '',  lastUpdate: '3hr', text: 'Is this job real!!??'},
+      {user: 'Erasto Laizer', profilePic: '', lastUpdate: '2hr', text: 'Yes it is, mambo point is very reliable'},
+      {user: 'Rajab Mkomwa', profilePic: '', lastUpdate: '3min', text: 'Mambo point is realy cool'},
+      {user: 'Erasto Laizer', profilePic: '', lastUpdate: '1min', text: 'Its realy cool'},
     ];
 
     this.formData = {
