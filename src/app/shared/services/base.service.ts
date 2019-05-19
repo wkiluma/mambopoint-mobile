@@ -14,7 +14,6 @@ export class BaseService<T> {
       )
     );
   }
-
   findById(id: string) {
     return this.serviceCollection
       .doc<T>(id)
@@ -26,6 +25,9 @@ export class BaseService<T> {
         })
       );
   }
+  findByType(type: string) {
+    return this.serviceCollection.ref.where('type','==',type).get();
+    }
 
   create(content: T) {
     return this.serviceCollection.add(content);

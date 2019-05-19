@@ -8,10 +8,10 @@
   </ion-fab>
   <!-- service types -->
   <div class="service-types">
-    <app-button label="All" shape="round"></app-button>
-    <app-button label="Tenders" shape="round" fill="outline"></app-button>
-    <app-button label="Jobs" shape="round" fill="outline"></app-button>
-    <app-button label="Internship" shape="round" fill="outline"></app-button>
+    <app-button label="All" shape="round" (click)="FilterService('All')"></app-button>
+    <app-button label="Tenders" shape="round" fill="outline" (click)="FilterService('Tender')"></app-button>
+    <app-button label="Jobs" shape="round" fill="outline" (click)="FilterService('Job')"></app-button>
+    <app-button label="Internship" shape="round" fill="outline" (click)="FilterService('Internship')"></app-button>
   </div>
   <!-- end of service types -->
 

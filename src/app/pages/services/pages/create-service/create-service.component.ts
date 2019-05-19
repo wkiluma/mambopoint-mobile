@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../../services/service.service';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-service',
   templateUrl: './create-service.component.html',
   styleUrls: ['./create-service.component.scss']
 })
 export class CreateServiceComponent implements OnInit {
+  toast: any;
   public toolbarTitle = 'Create Service';
   public FormData = {
     button : {
@@ -23,7 +25,7 @@ export class CreateServiceComponent implements OnInit {
       {label:'Type',type:'select',formControlName:'type',options:['Tender','Job','Internship']}
     ],
   }
-  constructor(private serviceService: ServiceService,private toastCtrl:ToastController) {}
+  constructor(private serviceService: ServiceService,private toastCtrl:ToastController,public router:Router) {}
 
   ngOnInit() {}
 
@@ -34,14 +36,17 @@ export class CreateServiceComponent implements OnInit {
       .then(res => {
         console.log(res);
       });
+      this.router.navigate(['/']);
   }
 
   showToast(msg) {
-    const toast =  this.toastCtrl.create({
+    this.toast =  this.toastCtrl.create({
       message: msg,
       duration: 3000,
       position: 'bottom'
+    }).then((toastData)=>{
+      console.log(toastData);
+      toastData.present();
     });
-   // toast.present();
   }
 }
