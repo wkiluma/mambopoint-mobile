@@ -22,6 +22,10 @@ export class CardComponent implements OnInit {
   async onComment() {
     const modal = await this.modalController.create({
       component: CommentListComponent,
+      componentProps: {
+        'postId' : this.card.id,
+        'postType' : this.card.type
+      }
     });
     return await modal.present();
    }

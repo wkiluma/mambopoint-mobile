@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CommentComponent implements OnInit {
   @Input() user: string;
   @Input() profilePic: string;
-  @Input() lastUpdate: string;
+  @Input() created: string;
   @Input() text: string;
   constructor() {
     this.profilePic = 'assets/icon/icon.jpeg';

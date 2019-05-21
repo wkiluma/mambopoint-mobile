@@ -1,10 +1,10 @@
 export interface Comment {
     id?: string;
     type: string;
-    userId:string ;
-    postId:string ;
-    comment: any;
+    userId: string ;
+    postId: string ;
+    text: string;
     created: string;
-    likes: string;
-    replies:string[] ;
+    // likes: number;
+    // replies: string[] ;
   }

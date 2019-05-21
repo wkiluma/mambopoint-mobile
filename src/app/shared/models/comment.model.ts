@@ -1,4 +1,4 @@
-export interface Comment {
+export interface Comments {
     user: string;
     profilePic: string;
     lastUpdate: string;

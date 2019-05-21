@@ -8,11 +8,10 @@
 </ion-header>
 
 <ion-content>
-  <app-comment *ngFor = "let comment of comments" [user]="comment.user" [lastUpdate]="comment.lastUpdate" [text]="comment.text"></app-comment>
+  <app-comment *ngFor = "let comment of comments$ | async" [user]="comment.userId" [created]="comment.created" [text]="comment.text"></app-comment>
 </ion-content>
-
+  
 <ion-footer>
-  <!-- <app-form [FormData] = "formData"></app-form> -->
   <form [formGroup]="formGroup" (ngSubmit)="postComment()">
     <ion-grid>
       <ion-row>
