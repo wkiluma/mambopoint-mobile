@@ -37,6 +37,7 @@ export class CommentListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.commentService.findCommentByPost(this.navParam.data.postId);
     this.comments$ = this.commentService.findAll();
     this.formGroup = this.formBuilder.group({});
     this.formGroup.addControl(this.formData.input.formControlName, new FormControl('', Validators.required));

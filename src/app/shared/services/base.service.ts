@@ -29,6 +29,15 @@ export class BaseService<T> {
     return this.serviceCollection.ref.where('type','==',type).get();
     }
 
+  findCommentByPost(postId: string){
+    this.serviceCollection.ref.where('postId', '==', postId).get().then(function(querysnapshot) {
+      // how to treate the querysnapshot
+      querysnapshot.forEach(function(doc) {
+         console.log(doc);
+      });
+    });
+  }
+
   create(content: T) {
     return this.serviceCollection.add(content);
   }
