@@ -31,7 +31,6 @@ export class BaseService<T> {
         )
       );
   }
-
   findById(id: string) {
     return this.angularFirestore
       .collection<T>(this.model)
