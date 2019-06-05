@@ -7,6 +7,7 @@
   fill="{{ fill }}"
   disabled="{{ disabled }}"
   type="{{ type }}"
+  (click)="onClick($event)"
 >
   <ion-icon
     *ngIf="icon"
@@ -27,6 +28,7 @@
   disabled="{{ disabled }}"
   type="{{ type }}"
   class="circle-button"
+  (click)="onClick($event)"
   *ngIf="shape === 'circle'"
 >
   {{ label | abbreviate }}

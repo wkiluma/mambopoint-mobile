@@ -9,6 +9,10 @@ import { Service } from '../models/service.model';
 })
 export class ServiceService extends BaseService<Service> {
   constructor(angularFireStore: AngularFirestore) {
-    super(angularFireStore.collection<Service>('services'));
+    super(angularFireStore);
+  }
+
+  get model() {
+    return 'services';
   }
 }

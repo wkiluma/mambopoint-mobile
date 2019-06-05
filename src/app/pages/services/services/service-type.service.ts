@@ -9,26 +9,27 @@ import { of } from 'rxjs';
 })
 export class ServiceTypeService extends BaseService<ServiceType> {
   constructor(angularFireStore: AngularFirestore) {
-    super(angularFireStore.collection<ServiceType>('serviceTypes'));
+    super(angularFireStore);
   }
 
   findAll() {
     return of([
+      { id: 'all', name: 'All' },
       {
-        id: 'tenders',
+        id: 'tender',
         name: 'Tenders'
       },
       {
-        id: 'jobs',
+        id: 'job',
         name: 'Jobs'
       },
       {
-        id: 'internships',
+        id: 'internship',
         name: 'Internships'
       },
-      { id: 'consultancies', name: 'Consultancies' },
+      { id: 'consultancy', name: 'Consultancies' },
       {
-        id: 'accomodations',
+        id: 'accomodation',
         name: 'Accomodations'
       }
     ]);

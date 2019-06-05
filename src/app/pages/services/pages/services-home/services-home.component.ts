@@ -5,6 +5,7 @@ import { ServiceType } from '../../models/service-type.model';
 import { Service } from '../../models/service.model';
 import { ServiceTypeService } from '../../services/service-type.service';
 import { ServiceService } from '../../services/service.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-services-home',
@@ -15,6 +16,7 @@ export class ServicesHomeComponent implements OnInit {
   public services$: Observable<Service[]>;
   public toolbarTitle = 'Services';
   public serviceTypes$: Observable<ServiceType[]>;
+  public currentServiceType = 'All';
 
   constructor(
     private serviceService: ServiceService,
@@ -24,5 +26,19 @@ export class ServicesHomeComponent implements OnInit {
   ngOnInit() {
     this.services$ = this.serviceService.findAll();
     this.serviceTypes$ = this.serviceTypeService.findAll();
+  }
+
+  onSelectType(e, serviceType: any) {
+    // TODO: Find flexible way to pass in service type
+    if (serviceType.id === 'all') {
+      this.services$ = this.serviceService.findAll();
+    } else {
+      this.currentServiceType = serviceType.id;
+      this.services$ = this.serviceService.findAll({
+        key: 'type',
+        operator: '==',
+        value: _.capitalize(serviceType.id)
+      });
+    }
   }
 }

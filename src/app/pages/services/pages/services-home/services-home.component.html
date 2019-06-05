@@ -14,9 +14,10 @@
     >
       <app-button
         label="{{ serviceType.name }}"
+        (buttonClick)="onSelectType($event, serviceType)"
         shape="circle"
         fill="outline"
-        color="dark"
+        color="{{ currentServiceType === serviceType.id ? 'primary' : 'dark' }}"
       ></app-button>
       <div class="service-types-label">{{ serviceType.name }}</div>
     </div>
