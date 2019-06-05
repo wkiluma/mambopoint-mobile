@@ -10,7 +10,7 @@
       </div>
       <div class="card-title-block">
         <div class="card-title">
-          <ion-badge *ngIf="card.type" color="primary">{{
+          <ion-badge *ngIf="card.type" class="card-badge">{{
             card.type
           }}</ion-badge>
           <span *ngIf="card.type">&nbsp;</span>
@@ -54,16 +54,20 @@
     <app-button
       [icon]="{ name: 'thumbs-up', size: 'small' }"
       fill="clear"
+      color="dark"
       label="Admire"
     ></app-button>
     <app-button
       [icon]="{ name: 'text', size: 'small' }"
       fill="clear"
+      color="dark"
       label="Comment"
+      (buttonClick)="onOpenComment()"
     ></app-button>
     <app-button
       [icon]="{ name: 'share', size: 'small' }"
       fill="clear"
+      color="dark"
       label="Share"
     ></app-button>
   </div>

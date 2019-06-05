@@ -6,6 +6,7 @@ import { Service } from '../../models/service.model';
 import { ServiceTypeService } from '../../services/service-type.service';
 import { ServiceService } from '../../services/service.service';
 import * as _ from 'lodash';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-services-home',
@@ -16,11 +17,12 @@ export class ServicesHomeComponent implements OnInit {
   public services$: Observable<Service[]>;
   public toolbarTitle = 'Services';
   public serviceTypes$: Observable<ServiceType[]>;
-  public currentServiceType = 'All';
+  public currentServiceType = 'all';
 
   constructor(
     private serviceService: ServiceService,
-    private serviceTypeService: ServiceTypeService
+    private serviceTypeService: ServiceTypeService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -40,5 +42,10 @@ export class ServicesHomeComponent implements OnInit {
         value: _.capitalize(serviceType.id)
       });
     }
+  }
+
+  onOpenComment(service: Service) {
+    console.log(service);
+    this.router.navigate(['tabs/services/service-comments/' + service.id]);
   }
 }

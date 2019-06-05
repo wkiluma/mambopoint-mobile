@@ -2,8 +2,12 @@ import {
   AngularFirestoreCollection,
   AngularFirestore
 } from '@angular/fire/firestore';
-import { map, take, switchMap } from 'rxjs/operators';
+import { map, take, switchMap, tap } from 'rxjs/operators';
 import { Observable, Subject, BehaviorSubject } from 'rxjs';
+
+interface BaseEntity {
+  id: string;
+}
 
 export class BaseService<T> {
   constructor(private readonly angularFirestore: AngularFirestore) {}
@@ -12,13 +16,30 @@ export class BaseService<T> {
     throw Error('Model not set');
   }
 
-  findAll(where?: any): Observable<T[]> {
+  findAll(where?: any): Observable<any[]> {
     if (where) {
-      return this.angularFirestore
-        .collection<T>(this.model, ref =>
-          ref.where(where.key, where.operator, where.value)
-        )
-        .valueChanges();
+      const collection = this.angularFirestore.collection<any>(this.model);
+
+      const query = collection.ref.where(
+        where.key,
+        where.operator,
+        where.value
+      );
+
+      return new Observable(observer => {
+        query.get().then(
+          snapshot => {
+            const results: any[] = snapshot.docs.map(doc => {
+              return { ...doc.data(), id: doc.id };
+            });
+            observer.next(results);
+            observer.complete();
+          },
+          error => {
+            observer.error(error);
+          }
+        );
+      });
     }
     return this.angularFirestore
       .collection<T>(this.model)

@@ -25,6 +25,6 @@
   <!-- end of service types -->
 
   <div *ngFor="let service of services$ | async">
-    <app-card [card]="service"></app-card>
+    <app-card [card]="service" (openComment)="onOpenComment($event)"></app-card>
   </div>
 </ion-content>
