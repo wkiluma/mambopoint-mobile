@@ -7,7 +7,6 @@ import { ServiceCommentsComponent } from './pages/service-comments/service-comme
 const routes: Routes = [
   { path: '', component: ServicesHomeComponent },
   { path: 'create-service', component: CreateServiceComponent },
-  { path: 'service-comments/:id', component: ServiceCommentsComponent }
 ];
 
 @NgModule({

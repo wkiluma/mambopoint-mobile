@@ -14,15 +14,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { metaReducers, reducers } from './store/reducers';
+import { SharedModule } from './shared/shared.module';
+import { ServicesModule } from './pages/services/services.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
     CoreModule,
     AppRoutingModule,
+    SharedModule,
+    ServicesModule,
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyCFfWz6okR0IIsGdcuDRGcU_uUS8U6FISU',
       authDomain: 'mambo-point-api.firebaseapp.com',

@@ -46,6 +46,6 @@ export class ServicesHomeComponent implements OnInit {
 
   onOpenComment(service: Service) {
     console.log(service);
-    this.router.navigate(['tabs/services/service-comments/' + service.id]);
+    this.router.navigate(['service-comments/' + service.id]);
   }
 }
