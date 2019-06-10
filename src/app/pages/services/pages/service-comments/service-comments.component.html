@@ -6,11 +6,11 @@
 
 
 <ion-footer>
-  <form>
+  <form [formGroup]="formGroup" (ngSubmit)="onPostComment()">
     <ion-grid>
       <ion-row>
         <ion-col size="10">
-          <ion-textarea placeholder="Enter a comment"></ion-textarea>
+          <ion-textarea [formControlName]="formData.input.formControlName" placeholder="{{ formData.input.placeholder }}"></ion-textarea>
         </ion-col>
 
         <ion-col size="2">

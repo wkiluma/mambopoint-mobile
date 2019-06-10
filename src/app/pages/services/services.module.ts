@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ServicesRoutingModule } from './services-routing.module';
 import { pages } from './pages';
@@ -9,6 +10,6 @@ import { ServiceCommentsComponent } from './pages/service-comments/service-comme
 
 @NgModule({
   declarations: [...pages],
-  imports: [CommonModule, IonicModule, ServicesRoutingModule, SharedModule]
+  imports: [CommonModule, IonicModule, ServicesRoutingModule, SharedModule, FormsModule, ReactiveFormsModule]
 })
 export class ServicesModule {}

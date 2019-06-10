@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-service-comments',
@@ -7,7 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceCommentsComponent implements OnInit {
   public toolbarTitle = 'Comments';
-  constructor() {}
+  formGroup: FormGroup;
+  formData: any;
 
-  ngOnInit() {}
+  constructor(private formBuilder: FormBuilder) {
+    this.formData = {
+      input: {
+        placeholder: 'Type your comment',
+        formControlName: 'comment'
+      }
+    }
+  }
+
+  ngOnInit() {
+    this.formGroup = this.formBuilder.group({});
+    this.formGroup.addControl(this.formData.input.formControlName, new FormControl('', Validators.required));
+  }
+
+  onPostComment() {
+    console.log(this.formGroup.value.comment);
+    
+  }
 }
